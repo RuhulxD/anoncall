@@ -1,0 +1,24 @@
+run
+sbt run
+exit
+run
+eclipse
+exit
+eclipse
+clean
+compile
+evicted
+evict
+evicted
+compile
+eclipse
+compile
+clean
+exit
+compile
+git status
+eclipse
+compile
+clean
+compile
+run
