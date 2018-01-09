@@ -7,16 +7,28 @@
 		revision="1.0-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20171115163156"/>
+		date="20180101143753"/>
 	<dependencies>
 		<module organisation="com.h2database" name="h2">
-			<revision name="1.4.194" status="release" pubdate="20170315005549" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="64">
+			<revision name="1.4.194" status="release" pubdate="20170315005549" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="65">
 				<license name="MPL 2.0 or EPL 1.0" url="http://h2database.com/html/license.html"/>
 				<metadata-artifact status="no" details="" size="2454" time="0" location="/home/ruhul/.ivy2/cache/com.h2database/h2/ivy-1.4.194.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.194/h2-1.4.194.pom"/>
 				<caller organisation="play-java-starter-example" name="play-java-starter-example_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.4.194" rev-constraint-default="1.4.194" rev-constraint-dynamic="1.4.194" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="h2" type="jar" ext="jar" status="no" details="" size="1803250" time="0" location="/home/ruhul/.ivy2/cache/com.h2database/h2/jars/h2-1.4.194.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.194/h2-1.4.194.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.json" name="org.json">
+			<revision name="chargebee-1.0" status="release" pubdate="20120225141705" resolver="public" artresolver="public" homepage="http://www.json.org/java/index.html" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="64">
+				<license name="provided without support or warranty" url="http://www.json.org/license.html"/>
+				<metadata-artifact status="successful" details="" size="3595" time="1179" location="/home/ruhul/.ivy2/cache/org.json/org.json/ivy-chargebee-1.0.xml" searched="true" original-local-location="/home/ruhul/.ivy2/cache/org.json/org.json/ivy-chargebee-1.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json/org.json/chargebee-1.0/org.json-chargebee-1.0.pom"/>
+				<caller organisation="play-java-starter-example" name="play-java-starter-example_2.12" conf="compile, runtime-internal, runtime, optional" rev="chargebee-1.0" rev-constraint-default="chargebee-1.0" rev-constraint-dynamic="chargebee-1.0" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="org.json" type="jar" ext="jar" status="successful" details="" size="40683" time="1592" location="/home/ruhul/.ivy2/cache/org.json/org.json/jars/org.json-chargebee-1.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/json/org.json/chargebee-1.0/org.json-chargebee-1.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

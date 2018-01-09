@@ -4,7 +4,7 @@
 		module="play-java-starter-example_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20171115163156"
+		publication="20180101143753"
 	>
 		<description>
 		play-java-starter-example
@@ -51,6 +51,7 @@
 		<dependency org="com.typesafe.play" name="play-logback_2.12" rev="2.6.7" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-akka-http-server_2.12" rev="2.6.7" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-guice_2.12" rev="2.6.7" conf="compile->default(compile)"/>
+		<dependency org="org.json" name="org.json" rev="chargebee-1.0" conf="compile->default(compile)"/>
 		<dependency org="com.h2database" name="h2" rev="1.4.194" conf="compile->default(compile)"/>
 		<dependency org="org.assertj" name="assertj-core" rev="3.6.2" conf="test->default(compile)"/>
 		<dependency org="org.awaitility" name="awaitility" rev="2.0.0" conf="test->default(compile)"/>

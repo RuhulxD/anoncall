@@ -1,24 +1,2 @@
-run
-sbt run
-exit
-run
-eclipse
-exit
-eclipse
-clean
-compile
-evicted
-evict
-evicted
-compile
-eclipse
-compile
-clean
-exit
-compile
-git status
-eclipse
-compile
-clean
-compile
-run
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
+all {file:/home/ruhul/codes/AnonCall/restapi/}root/products {file:/home/ruhul/codes/AnonCall/restapi/}root/test:products

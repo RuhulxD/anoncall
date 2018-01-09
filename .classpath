@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="restapi/app"/>
+	<classpathentry kind="src" path="restapi/target/scala-2.12/routes/main"/>
+	<classpathentry kind="src" path="restapi/test"/>
+	<classpathentry kind="lib" path="restapi/sbt-dist/bin/sbt-launch.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="restapi/target/scala-2.12/classes"/>
+</classpath>

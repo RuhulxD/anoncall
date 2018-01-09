@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ruhul/codes/AnonCall/restapi/conf/routes
-// @DATE:Wed Nov 15 16:31:56 BDT 2017
+// @DATE:Tue Jan 09 18:52:03 BDT 2018
 
 package router
 
@@ -16,31 +16,39 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  HomeController_0: controllers.HomeController,
+  HomeController_1: controllers.HomeController,
   // @LINE:8
-  CountController_3: controllers.CountController,
+  CountController_0: controllers.CountController,
   // @LINE:10
   AsyncController_2: controllers.AsyncController,
   // @LINE:13
-  Assets_1: controllers.Assets,
+  Assets_5: controllers.Assets,
+  // @LINE:18
+  RegisterController_3: controllers.RegisterController,
+  // @LINE:20
+  CallController_4: controllers.CallController,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    HomeController_0: controllers.HomeController,
+    HomeController_1: controllers.HomeController,
     // @LINE:8
-    CountController_3: controllers.CountController,
+    CountController_0: controllers.CountController,
     // @LINE:10
     AsyncController_2: controllers.AsyncController,
     // @LINE:13
-    Assets_1: controllers.Assets
-  ) = this(errorHandler, HomeController_0, CountController_3, AsyncController_2, Assets_1, "/")
+    Assets_5: controllers.Assets,
+    // @LINE:18
+    RegisterController_3: controllers.RegisterController,
+    // @LINE:20
+    CallController_4: controllers.CallController
+  ) = this(errorHandler, HomeController_1, CountController_0, AsyncController_2, Assets_5, RegisterController_3, CallController_4, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, CountController_3, AsyncController_2, Assets_1, prefix)
+    new Routes(errorHandler, HomeController_1, CountController_0, AsyncController_2, Assets_5, RegisterController_3, CallController_4, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -52,6 +60,10 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """count""", """controllers.CountController.count"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """message""", """controllers.AsyncController.message"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """users""", """controllers.HomeController.users"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register/""" + "$" + """DeviceID<[^/]+>""", """controllers.RegisterController.register(DeviceID:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """call/""" + "$" + """DeviceID<[^/]+>""", """controllers.CallController.call(DeviceID:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tahmid""", """controllers.CallController.tahmid"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -64,7 +76,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_0.index,
+    HomeController_1.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -82,7 +94,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("count")))
   )
   private[this] lazy val controllers_CountController_count1_invoker = createInvoker(
-    CountController_3.count,
+    CountController_0.count,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CountController",
@@ -118,7 +130,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
-    Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
+    Assets_5.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -131,19 +143,91 @@ class Routes(
     )
   )
 
+  // @LINE:17
+  private[this] lazy val controllers_HomeController_users4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users")))
+  )
+  private[this] lazy val controllers_HomeController_users4_invoker = createInvoker(
+    HomeController_1.users,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "users",
+      Nil,
+      "GET",
+      this.prefix + """users""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:18
+  private[this] lazy val controllers_RegisterController_register5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register/"), DynamicPart("DeviceID", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_RegisterController_register5_invoker = createInvoker(
+    RegisterController_3.register(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RegisterController",
+      "register",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """register/""" + "$" + """DeviceID<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:20
+  private[this] lazy val controllers_CallController_call6_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("call/"), DynamicPart("DeviceID", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_CallController_call6_invoker = createInvoker(
+    CallController_4.call(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CallController",
+      "call",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """call/""" + "$" + """DeviceID<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_CallController_tahmid7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tahmid")))
+  )
+  private[this] lazy val controllers_CallController_tahmid7_invoker = createInvoker(
+    CallController_4.tahmid,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CallController",
+      "tahmid",
+      Nil,
+      "GET",
+      this.prefix + """tahmid""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
     case controllers_HomeController_index0_route(params@_) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_0.index)
+        controllers_HomeController_index0_invoker.call(HomeController_1.index)
       }
   
     // @LINE:8
     case controllers_CountController_count1_route(params@_) =>
       call { 
-        controllers_CountController_count1_invoker.call(CountController_3.count)
+        controllers_CountController_count1_invoker.call(CountController_0.count)
       }
   
     // @LINE:10
@@ -155,7 +239,31 @@ class Routes(
     // @LINE:13
     case controllers_Assets_versioned3_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned3_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned3_invoker.call(Assets_5.versioned(path, file))
+      }
+  
+    // @LINE:17
+    case controllers_HomeController_users4_route(params@_) =>
+      call { 
+        controllers_HomeController_users4_invoker.call(HomeController_1.users)
+      }
+  
+    // @LINE:18
+    case controllers_RegisterController_register5_route(params@_) =>
+      call(params.fromPath[String]("DeviceID", None)) { (DeviceID) =>
+        controllers_RegisterController_register5_invoker.call(RegisterController_3.register(DeviceID))
+      }
+  
+    // @LINE:20
+    case controllers_CallController_call6_route(params@_) =>
+      call(params.fromPath[String]("DeviceID", None)) { (DeviceID) =>
+        controllers_CallController_call6_invoker.call(CallController_4.call(DeviceID))
+      }
+  
+    // @LINE:22
+    case controllers_CallController_tahmid7_route(params@_) =>
+      call { 
+        controllers_CallController_tahmid7_invoker.call(CallController_4.tahmid)
       }
   }
 }

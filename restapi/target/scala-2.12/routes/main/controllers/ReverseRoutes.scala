@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ruhul/codes/AnonCall/restapi/conf/routes
-// @DATE:Wed Nov 15 16:31:56 BDT 2017
+// @DATE:Tue Jan 09 18:52:03 BDT 2018
 
 import play.api.mvc.Call
 
@@ -11,36 +11,6 @@ import _root_.play.libs.F
 
 // @LINE:6
 package controllers {
-
-  // @LINE:10
-  class ReverseAsyncController(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:10
-    def message(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "message")
-    }
-  
-  }
-
-  // @LINE:6
-  class ReverseHomeController(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:6
-    def index(): Call = {
-      
-      Call("GET", _prefix)
-    }
-  
-  }
 
   // @LINE:13
   class ReverseAssets(_prefix: => String) {
@@ -57,6 +27,21 @@ package controllers {
   
   }
 
+  // @LINE:18
+  class ReverseRegisterController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:18
+    def register(DeviceID:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "register/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("DeviceID", DeviceID)))
+    }
+  
+  }
+
   // @LINE:8
   class ReverseCountController(_prefix: => String) {
     def _defaultPrefix: String = {
@@ -68,6 +53,63 @@ package controllers {
     def count(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "count")
+    }
+  
+  }
+
+  // @LINE:20
+  class ReverseCallController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:20
+    def call(DeviceID:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "call/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("DeviceID", DeviceID)))
+    }
+  
+    // @LINE:22
+    def tahmid(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "tahmid")
+    }
+  
+  }
+
+  // @LINE:6
+  class ReverseHomeController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def users(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "users")
+    }
+  
+    // @LINE:6
+    def index(): Call = {
+      
+      Call("GET", _prefix)
+    }
+  
+  }
+
+  // @LINE:10
+  class ReverseAsyncController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:10
+    def message(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "message")
     }
   
   }
