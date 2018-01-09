@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ruhul/codes/AnonCall/restapi/conf/routes
-// @DATE:Tue Jan 09 18:52:03 BDT 2018
+// @SOURCE:/Users/ruhul/code/personal/sust/anoncall/restapi/conf/routes
+// @DATE:Wed Jan 10 01:57:12 BDT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -9,8 +9,92 @@ import play.api.routing.JavaScriptReverseRoute
 import _root_.controllers.Assets.Asset
 import _root_.play.libs.F
 
-// @LINE:6
+// @LINE:8
 package controllers.javascript {
+
+  // @LINE:10
+  class ReverseAsyncController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:10
+    def message: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AsyncController.message",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "message"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:17
+  class ReverseApplicationController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ApplicationController.addUser",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "anoncall/register"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def makeCall: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ApplicationController.makeCall",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "anoncall/makecall"})
+        }
+      """
+    )
+  
+    // @LINE:19
+    def endCall: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ApplicationController.endCall",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "anoncall/endcall"})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def getTopics: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ApplicationController.getTopics",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "anoncall/getTopics"})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:20
+    def inCall: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ApplicationController.inCall",
+      """
+        function(caller0,callee1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "anoncall/incall/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("caller", caller0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("callee", callee1))})
+        }
+      """
+    )
+  
+  }
 
   // @LINE:13
   class ReverseAssets(_prefix: => String) {
@@ -32,26 +116,6 @@ package controllers.javascript {
   
   }
 
-  // @LINE:18
-  class ReverseRegisterController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:18
-    def register: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.RegisterController.register",
-      """
-        function(DeviceID0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("DeviceID", DeviceID0))})
-        }
-      """
-    )
-  
-  }
-
   // @LINE:8
   class ReverseCountController(_prefix: => String) {
 
@@ -66,86 +130,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "count"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:20
-  class ReverseCallController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:20
-    def call: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CallController.call",
-      """
-        function(DeviceID0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "call/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("DeviceID", DeviceID0))})
-        }
-      """
-    )
-  
-    // @LINE:22
-    def tahmid: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CallController.tahmid",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tahmid"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:6
-  class ReverseHomeController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:17
-    def users: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.users",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users"})
-        }
-      """
-    )
-  
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:10
-  class ReverseAsyncController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:10
-    def message: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AsyncController.message",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "message"})
         }
       """
     )

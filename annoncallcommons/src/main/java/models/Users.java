@@ -1,10 +1,13 @@
 package models;
 
 public class Users extends Location{
-    public String id;
-    public String name;
-    public Gender gender;
-    public int level;
+    private String id;
+    private String name;
+    private Gender gender;
+    private int level;
+
+    public Users() {
+    }
 
     public String getId() {
         return id;
@@ -36,5 +39,19 @@ public class Users extends Location{
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", gender=" + gender +
+                ", level=" + level +
+                ", latLon=" + latLon +
+                ", ipaddress=" + ipaddress +
+                ", countryCode='" + countryCode + '\'' +
+                ", City='" + City + '\'' +
+                '}';
     }
 }

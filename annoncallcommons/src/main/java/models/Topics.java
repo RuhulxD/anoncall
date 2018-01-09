@@ -1,16 +1,27 @@
 package models;
 
 public class Topics {
-    int id;
+    Long id;
     String title;
     String thumb;
     String descrpition;
 
-    public int getId() {
+    public Topics() {
+        id = System.currentTimeMillis();
+    }
+
+    public Topics(Long id, String title, String thumb, String descrpition) {
+        this.id = id;
+        this.title = title;
+        this.thumb = thumb;
+        this.descrpition = descrpition;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -36,5 +47,15 @@ public class Topics {
 
     public void setDescrpition(String descrpition) {
         this.descrpition = descrpition;
+    }
+
+    @Override
+    public String toString() {
+        return "Topics{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", thumb='" + thumb + '\'' +
+                ", descrpition='" + descrpition + '\'' +
+                '}';
     }
 }

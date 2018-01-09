@@ -3,7 +3,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+#GET     /                           controllers.HomeController.index
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
@@ -14,9 +14,9 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 #SUST_PIONEERS_REST_API
 
-GET     /users                                          controllers.HomeController.users
-GET     /register/:DeviceID                             controllers.RegisterController.register(DeviceID: String)
-
-GET     /call/:DeviceID                                 controllers.CallController.call(DeviceID: String)
-
-GET     /tahmid                                         controllers.CallController.tahmid
+POST        /anoncall/register                      controllers.ApplicationController.addUser
+POST        /anoncall/makecall                      controllers.ApplicationController.makeCall
+POST        /anoncall/endcall                       controllers.ApplicationController.endCall
+POST        /anoncall/incall/:caller/:callee        controllers.ApplicationController.inCall(caller:String, callee:String)
+GET         /anoncall/getTopics                     controllers.ApplicationController.getTopics
+GET         /anoncall/getTopics/                    controllers.ApplicationController.getTopics

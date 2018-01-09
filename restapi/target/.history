@@ -1,2 +1,15 @@
 ;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml; session clear-all
 all {file:/home/ruhul/codes/AnonCall/restapi/}root/products {file:/home/ruhul/codes/AnonCall/restapi/}root/test:products
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /private/var/folders/zb/mhv5k87x10dftctfrx84j6ym0000gn/T/sbt-structure.xml; session clear-all
+all {file:/Users/ruhul/code/personal/sust/anoncall/restapi/}root/products {file:/Users/ruhul/code/personal/sust/anoncall/restapi/}root/test:products
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /private/var/folders/zb/mhv5k87x10dftctfrx84j6ym0000gn/T/sbt-structure.xml; session clear-all
+all {file:/Users/ruhul/code/personal/sust/anoncall/restapi/}root/products {file:/Users/ruhul/code/personal/sust/anoncall/restapi/}root/test:products
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /private/var/folders/zb/mhv5k87x10dftctfrx84j6ym0000gn/T/sbt-structure.xml; session clear-all
+all {file:/Users/ruhul/code/personal/sust/anoncall/restapi/}root/products {file:/Users/ruhul/code/personal/sust/anoncall/restapi/}root/test:products
+clean
+dist
+clean
+compile
+clean
+dist
+exit

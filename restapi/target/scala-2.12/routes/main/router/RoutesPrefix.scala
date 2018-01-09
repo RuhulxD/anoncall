@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ruhul/codes/AnonCall/restapi/conf/routes
-// @DATE:Tue Jan 09 18:52:03 BDT 2018
+// @SOURCE:/Users/ruhul/code/personal/sust/anoncall/restapi/conf/routes
+// @DATE:Wed Jan 10 01:57:12 BDT 2018
 
 
 package router {

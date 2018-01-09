@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/annoncallcommons.iml" filepath="$PROJECT_DIR$/.idea/modules/annoncallcommons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/annoncallcommons.iml" filepath="$PROJECT_DIR$/annoncallcommons.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/annoncallcommons_main.iml" filepath="$PROJECT_DIR$/.idea/modules/annoncallcommons_main.iml" group="annoncallcommons" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/annoncallcommons_test.iml" filepath="$PROJECT_DIR$/.idea/modules/annoncallcommons_test.iml" group="annoncallcommons" />
     </modules>
